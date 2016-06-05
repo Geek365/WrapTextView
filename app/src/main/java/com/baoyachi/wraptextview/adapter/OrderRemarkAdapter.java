@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.baoyachi.wraptextview.R;
 import com.baoyachi.wraptextview.bean.OrderRemarkBean;
-import com.baoyachi.wraptextview.widget.WrapTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +28,8 @@ public class OrderRemarkAdapter extends RecyclerView.Adapter<OrderRemarkAdapter.
     private String longestTitle;
     private List<OrderRemarkBean> mList;
     private int mWidth;
+    private TextView mTvFront;
+    private RelativeLayout.LayoutParams mLayoutParams;
 
     public OrderRemarkAdapter()
     {
@@ -59,6 +60,32 @@ public class OrderRemarkAdapter extends RecyclerView.Adapter<OrderRemarkAdapter.
     public OrderRemarkViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         mContext = parent.getContext();
+        mTvFront = new TextView(mContext);
+        //        TextView textView = new TextView(mContext);
+
+        mTvFront.setTextColor(Color.BLACK);
+        mTvFront.setText(longestTitle);
+        mTvFront.setGravity(Gravity.CENTER);
+
+        int spec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        mTvFront.measure(spec, spec);
+
+        // getMeasuredWidth
+        int measuredWidth = mTvFront.getMeasuredWidth();
+        int measuredHeight = mTvFront.getMeasuredHeight();
+
+        // new textpaint measureText
+        TextPaint newPaint = new TextPaint();
+        float textSize = mContext.getResources().getDisplayMetrics().scaledDensity * 15;
+        newPaint.setTextSize(textSize);
+        float newPaintWidth = newPaint.measureText(longestTitle);
+
+        // textView getPaint measureText
+        TextPaint textPaint = mTvFront.getPaint();
+        float textPaintWidth = textPaint.measureText(longestTitle);
+
+
+        mLayoutParams = new RelativeLayout.LayoutParams((int) textPaintWidth, measuredHeight);
         return new OrderRemarkViewHolder(View.inflate(parent.getContext(), R.layout.item_text_view, null));
     }
 
@@ -68,35 +95,8 @@ public class OrderRemarkAdapter extends RecyclerView.Adapter<OrderRemarkAdapter.
 
 
         OrderRemarkBean orderRemarkBean = mList.get(position);
-        //        TextView textView = new TextView(mContext);
-        WrapTextView tv_front = new WrapTextView(mContext);
-        tv_front.setTextColor(Color.BLACK);
-        tv_front.setText(longestTitle);
-        tv_front.setGravity(Gravity.CENTER);
-        tv_front.setTextSize(16);
-        //监听textview尺寸改变
 
-        int spec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        tv_front.measure(spec, spec);
-
-        // getMeasuredWidth
-        int measuredWidth = tv_front.getMeasuredWidth();
-        int measuredHeight = tv_front.getMeasuredHeight();
-
-        // new textpaint measureText
-        TextPaint newPaint = new TextPaint();
-        float textSize = mContext.getResources().getDisplayMetrics().scaledDensity * 15;
-        newPaint.setTextSize(textSize);
-        float newPaintWidth = newPaint.measureText(longestTitle);
-
-        // textView getPaint measureText
-        TextPaint textPaint = tv_front.getPaint();
-        float textPaintWidth = textPaint.measureText(longestTitle);
-
-        holder.rlTitle.getHeight();
-
-        RelativeLayout.LayoutParams Params1 = new RelativeLayout.LayoutParams((int) textPaintWidth, measuredHeight);
-        holder.rlTitle.setLayoutParams(Params1);
+        holder.rlTitle.setLayoutParams(mLayoutParams);
 
         holder.tvTitle.setText(orderRemarkBean.getTitle());
         holder.detailMessage.setText(orderRemarkBean.getDetailMessage());
