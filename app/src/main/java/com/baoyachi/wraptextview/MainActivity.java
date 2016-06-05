@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity
         List<OrderRemarkBean> list = new ArrayList<>();
 
         list.add(new OrderRemarkBean("订号：", "23123131"));
-        list.add(new OrderRemarkBean("客类型：", "23123131"));
-        list.add(new OrderRemarkBean("企业信息名称：", "23123131"));
-        list.add(new OrderRemarkBean("开始的时间：", "23123131"));
-        list.add(new OrderRemarkBean("结束时间：", "23123131"));
-        list.add(new OrderRemarkBean("技师数：", "23123131"));
-        list.add(new OrderRemarkBean("我的身份：", "23123131"));
+        list.add(new OrderRemarkBean("客类型：", "vip客户"));
+        list.add(new OrderRemarkBean("企业信息名称详情：", "北京小小小科技有限公司"));
+        list.add(new OrderRemarkBean("开始的时间：", "2016-06-06 02:10:18"));
+        list.add(new OrderRemarkBean("结束时间：", "2016-06-06 20:10:18"));
+        list.add(new OrderRemarkBean("快递员数：", "3名"));
+        list.add(new OrderRemarkBean("我的身份属性是：", "快递员"));
 
 
         OrderRemarkAdapter orderRemarkAdapter = new OrderRemarkAdapter();
