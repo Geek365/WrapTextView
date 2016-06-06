@@ -1,4 +1,4 @@
-package com.baoyachi.wraptextview.bean;
+package com.baoyachi.demo.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,12 +1,12 @@
-package com.baoyachi.wraptextview;
+package com.baoyachi.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.baoyachi.wraptextview.adapter.OrderRemarkAdapter;
-import com.baoyachi.wraptextview.bean.OrderRemarkBean;
+import com.baoyachi.demo.adapter.OrderRemarkAdapter;
+import com.baoyachi.demo.bean.OrderRemarkBean;
 
 import java.util.ArrayList;
 import java.util.List;

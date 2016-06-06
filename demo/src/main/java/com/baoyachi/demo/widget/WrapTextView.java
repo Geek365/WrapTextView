@@ -1,4 +1,4 @@
-package com.baoyachi.wraptextview.widget;
+package com.baoyachi.demo.widget;
 
 import android.annotation.TargetApi;
 import android.content.Context;

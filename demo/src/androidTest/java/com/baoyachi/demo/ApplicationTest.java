@@ -1,4 +1,4 @@
-package com.baoyachi.wraptextview;
+package com.baoyachi.demo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

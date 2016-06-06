@@ -1,4 +1,4 @@
-package com.baoyachi.wraptextview;
+package com.baoyachi.demo;
 
 import org.junit.Test;
 

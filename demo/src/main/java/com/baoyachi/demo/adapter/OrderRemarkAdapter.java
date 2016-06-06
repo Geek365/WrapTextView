@@ -1,4 +1,4 @@
-package com.baoyachi.wraptextview.adapter;
+package com.baoyachi.demo.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.baoyachi.wraptextview.R;
-import com.baoyachi.wraptextview.bean.OrderRemarkBean;
+import com.baoyachi.demo.R;
+import com.baoyachi.demo.bean.OrderRemarkBean;
 
 import java.util.ArrayList;
 import java.util.List;
