@@ -1,88 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-
-    <RelativeLayout
-        android:id="@+id/rl_center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="54dp"
-        android:padding="16dp"
-        >
-
-
-        <TextView
-            android:id="@+id/tv_order_address_title"
-            android:text="送货地址："
-            android:textColor="#FF333333"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_toLeftOf="@+id/btn_route"
-            android:lineSpacingExtra="4dp"
-            android:text="北京市海淀区东四十条海淀大楼物美大厦上地西里永辉黄金家园18#三单元26层604室 包牙齿收"
-            android:layout_toRightOf="@+id/tv_order_address_title"
-            android:textColor="#FF666666"
-            android:textSize="16sp"
-            android:id="@+id/tv_order_address_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <Button
-            android:layout_marginLeft="8dp"
-            android:id="@+id/btn_route"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text="查看路线"
-            android:textSize="16sp"
-            android:textColor="@android:color/white"
-            android:background="@color/colorPrimary"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
-
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/view_line_bottom1"
-        android:layout_below="@+id/rl_center"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#ff999999"/>
-
+    >
 
     <RelativeLayout
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/view_line_bottom1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="54dp"
+            android:padding="16dp"
+            >
+
+
+            <TextView
+                android:id="@+id/tv_order_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="送货地址："
+                android:textColor="#FF333333"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_order_address_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/btn_route"
+                android:layout_toRightOf="@+id/tv_order_address_title"
+                android:lineSpacingExtra="4dp"
+                android:text="北京市海淀区东四十条海淀大楼物美大厦上地西里永辉黄金家园18#三单元26层604室 包牙齿收"
+                android:textColor="#FF666666"
+                android:textSize="16sp"/>
+
+
+            <Button
+                android:id="@+id/btn_route"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:background="@color/colorPrimary"
+                android:text="查看路线"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
 
         <View
+            android:id="@+id/view_line_bottom1"
             android:layout_width="match_parent"
             android:layout_height="1px"
+            android:layout_below="@+id/rl_center"
             android:background="#ff999999"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
-        <View
-            android:layout_below="@+id/recyclerview_text"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="#ff999999"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_line_bottom1"
+            android:layout_marginTop="16dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ff999999"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@+id/recyclerview_text"
+                android:background="#ff999999"/>
+
+        </RelativeLayout>
+
 
     </RelativeLayout>
-
-
-
-
-</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
