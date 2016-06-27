@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/WrapTextView.iml" filepath="$PROJECT_DIR$/WrapTextView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo/app.iml" filepath="$PROJECT_DIR$/demo/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
     </modules>
   </component>
