@@ -8,7 +8,7 @@
 ###首先来看一组样张
 这里的样式是以：对其的排版。
 
-<img style='width: 300px' src="art.png"></img>
+<img width="300px" height="500px" src="art.png"></img>
 
 
 
